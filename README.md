@@ -2,23 +2,21 @@
 
 ## ماهي لغة TypeScript ؟
 
-تعتبر لغة JavaScript لغة مرنة وسهلة في التعلم والاستخدام، وتُستخدم من قِبل أغلب المبرمجين لسرعتها في بناء المشاريع، ومع ذلك إلا إن مرونتها العالية تتسبب غالبا في حدوث الكثير من الأخطاء البرمجية الغير متوقعة خصوصا في المشاريع الكبيرة أو تلك التي يعمل عليها مجموعة من المبرمجين.
+قبل البدء في الحديث عن لغة TypeScript دعنا نتحدث عن لغة **JavaScript** إذ تعتبر JavaScript لغة مرنة وسهلة في التعلم والاستخدام، وتُستخدم من قِبل أغلب المبرمجين لسرعتها في بناء المشاريع، ومع ذلك إلا إن مرونتها العالية تتسبب غالبا في حدوث الكثير من الأخطاء البرمجية الغير متوقعة خصوصا في المشاريع الكبيرة أو تلك التي يعمل عليها مجموعة من المبرمجين، والأدهى من ذلك أن كثيرا من تلك الأخطاء البرمجية لا تظهر كخطأ برمجي وبالتالي يصعب عليك كمطور ويب تتبع تلك الأخطاء المنطقية.
 
 وأحد أكثر تلك الأخطاء شيوعا هي تغير أنواع البيانات Data Types والتي عادة ما تظهر في المشاريع الكبيرة أو التي يعمل فيها مجموعة من المبرمجين. ولهذا تم تطوير TypeScript من قبل Microsoft لتقوم بحل هذه المشكلات التي تواجه المطورين أثناء تطويرهم بلغة JavaScript.
 
-وبالتالي نستطيع الان تعريف TypeScript ببساطة على أنها لغة برمجة مبنية فوق JavaScript وتحتوي على جميع ما تحتويه JavaScript بالإضافة إلى مجموعة من المميزات التي تجعل JavaScript تعمل بشكل أفضل في المشاريع كبيرة الحجم، وذلك بإضافة Data Types لها، مما يقلل من إمكانية حدوث الأخطاء البرمجية وجعلها قابلة للتطوير scalable بشكل سلس.
+وبالتالي نستطيع الان تعريف **TypeScript** ببساطة على أنها لغة برمجة مبنية فوق لغة JavaScript وتحتوي على جميع ما تحتويه JavaScript بالإضافة إلى مجموعة من المميزات التي تجعل JavaScript تعمل بشكل أفضل في المشاريع كبيرة الحجم، وذلك بإضافة Data Types لها ( أنواع البيانات )، مما يقلل من إمكانية حدوث الأخطاء البرمجية وجعلها قابلة للتطوير scalable بشكل سلس وفعّال.
 
 **خلاصة الكلام :**
-لغة TypeScript هي نفسها لغة JavaScript مع إضافة أنواع البيانات Data Types لها.
+
+لغة **TypeScript** هي نفسها لغة JavaScript مع إضافة أنواع البيانات Data Types لها.
 
 ## لماذا نستخدم TypeScript ؟
 
-تمكننا لغة TypeScript من استكشاف الأخطاء البرمجية أثناء كتابتنا للكود البرمجي ( Static Type Checking )، وقبل تنفيذ الكود وعمل run له، بالإضافة إلى طباعته لأخطاء واضحة يستطيع المبرمج تتبعها ومعرفة ماهيتها بسهولة بخلاف JavaScript التي تطبع في بعض الأحيان أخطاء غير مفهومة.
+تمكننا لغة TypeScript من استكشاف الأخطاء البرمجية **أثناء كتابتنا للكود البرمجي** ( Static Type Checking )، وقبل تنفيذ الكود وعمل compiling له، بحيث يقوم الـ compiler الخاص بـ TypeScript بطباعة أخطاء واضحة يستطيع المبرمج تتبعها ومعرفة ماهيتها بسهولة بخلاف JavaScript التي تطبع في بعض الأحيان أخطاء غير مفهومة وتتجاهل في بعض الأحيان الأخطاء المنطقية -الأمر الذي يؤدي إلى العديد من المشاكل التقنية المنطقية لاحقا-.
 
 ## أمثلة على بعض الأخطاء التي لا تظهر أثناء كتابة الكود في لغة JavaScript
-
-**مثال البرجر**
-![burger](./burger.png)
 
 ```js
 // [index.js] => example 1
@@ -27,19 +25,21 @@ const car = {
 	color: 'white',
 	year: 2022,
 };
-
 console.log(car.maxSpeed); // undefined ❌
 ```
+
+في المثال السابق لا توضح لنا لغة JavaScript مكان الخطأ ولا تقوم بإعلامنا حتى أننا قمنا بارتكاب خطأ وهو طباعة عنصر نعتقد أنه موجود في الـ object car في حين أنه ليس له وجود في ذلك الـ object.
 
 ```js
 // [index.js] => example 2
 function sum(a, b) {
 	console.log(`${a} + ${b} = ${a + b}`);
 }
-
 sum('2', 3); // 23 ❌
 sum('Hi', 5); // Hi5 ❌
 ```
+
+في المثال السابق قمنا عن طريق الخطأ بتمرير قيم نصية string للـ function sum وبالتالي أصبح حاصل جمع العددين غير منطقي والنتيجة خاطئة تماما، ومع ذلك لم تخبرنا JavaScript بهذا الخطأ وأتاحت لنا تمرير تلك القيم الخاطئة أثناء استدعائنا للـ function sum.
 
 ```js
 // [index.js] => example 3
@@ -49,17 +49,7 @@ function getTotalPrice(price) {
 getTotalPrice(); // NaN ❌
 ```
 
-```js
-// [index.js] => example 4
-function getUsers(users) {
-	if (ysers.length > 0) {
-		console.log('Users count =', users.length);
-	} else {
-		console.log('There is no users!');
-	}
-}
-getUsers(['Ahmad', 'Ali', 'Alaa']); // ReferenceError: ysers is not defined ❌
-```
+في المثال السابق عرّفنا function اسمها getTotalPrice والتي تقوم بأخذ قيمة مبلغ الفاتورة وتقوم بتقريبه لأقرب قيمة عشرية ليستطيع العميل دفع قيمة الفاتورة، لكن لاحظ أننا لم نقم بتمرير قيمة المبلغ أثناء استدعائنا للـ function الأمر الذي جعل قيمة الناتج عبارة عن `NaN` ومعناه القيمة المرسلة لا تمثل رقم، لكن رغم ذلك لم تمنعنا JavaScript من استدعاء الـ function في حين أننا لم نقم بتمرير أي قيمة لها ولم توضح لنا حتى أنه يجب علينا تمرير تلك القيمة.
 
 ## متى نستخدم TypeScript ؟
 
@@ -68,73 +58,96 @@ getUsers(['Ahmad', 'Ali', 'Alaa']); // ReferenceError: ysers is not defined ❌
 
 ## ماهي الفروقات بين JavaScript و TypeScript ؟
 
-ببساطة فكر في TypeScript على أنها هي نفسها JavaScript مع إضافة أنواع للبيانات Data Types لها.
+ببساطة فكر في **TypeScript** على أنها هي نفسها JavaScript مع إضافة أنواع للبيانات Data Types لها.
 
 ## كيف تعمل TypeScript
 
-المتصفحات لا تفهم لغة TypeScript، لذلك يقوم الـ Compiler الخاص بـ TypeScript بتحويل الكود الخاص بـ TypeScript إلى كود بلغة JavaScript وبالتالي تستطيع المتصفحات قراءة ذلك الكود.
+المتصفحات لا تفهم لغة TypeScript، المتصفحات لا تفهم سوى `HTML` & `CSS` & `JavaScript` **لذلك يقوم الـ Compiler الخاص بـ TypeScript** بتحويل الكود الخاص بـ TypeScript إلى كود بلغة JavaScript وبالتالي تستطيع المتصفحات قراءة ذلك الكود.
 
 ## تجهيز بيئة العمل
 
-- تحميل [Node.js](https://nodejs.org/en)
-- التحقق من إصدار Node.js والتحقق من تواجده في النظام `node -v`
-- تحميل محرر الأكواد [VSCode](https://code.visualstudio.com/)
-- تحميل TypeScript والتحقق من تواجده في النظام `npm i -g typescript`
-- التحقق من تواجد TypeScript في النظام `tsc -v`
-- إنشاء أول ملف TypeScript مثلا `index.ts`
-- ترجمة ملف TypeScript إلى JavaScript عن طريق الأمر `tsc fileName.ts`
-- التعرف على `tsc -w`
-- التعرف على `tsc --init` و `tsconfig.json`
+لتجهيز بيئة العمل نحتاج بداية إلى :
 
-## التعرف على أنواع البيانات DataTypes
+- تحميل [Node.js](https://nodejs.org/en) إلى جهازنا عن طريق زيارة موقعهم الرسمي.
+- التحقق من إصدار Node.js والتحقق من تواجده في النظام وذلك بكتابة الأمر التالي داخل الـ Terminal
 
-تحتوي لغة TypeScript على مجموعة من أنواع البيانات من بينها ثلاثة أنواع رئيسية هي أهمها وأكثرها استخداما وهي `string` و `number` و `boolean`.
-
-- نستخدم نوع البيانات `string` للتعامل مع النصوص مثل `"Hello, world"`.
-- نستخدم نوع البيانات `number` لكل ما له علاقة بالأرقام سواء كانت `integer` مثل `10` أو `float` مثل `15.3`.
-- نستخدم نوع البيانات `boolean` للتعامل مع `true` و `false`.
-
-```ts
-// [index.ts] => example 1
-let email = 'fulan@gmail.com'; // string ✅
-email = 10; // Type 'number' is not assignable to type 'string' ❌
-email = 'ellan@gmail.com'; // ✅
+```
+node -v
 ```
 
-```ts
-// [index.ts] => example 2
-let year = 2022; // number ✅
-year = '2030'; //Type 'string' is not assignable to type 'number' ❌
-year = 2030; // ✅
+والذي سيطبع لنا إصدار node في جهازنا مثل `v16.16.0`.
+
+- تحميل محرر الأكواد [VSCode](https://code.visualstudio.com) من موقعهم الرسمي
+
+- تحميل TypeScript عن طريق كتابة الأمر التالي داخل الـ Terminal
+
+```
+npm i -g typescript
 ```
 
-```ts
-// [index.ts] => example 3
-let isAdmin = true; // boolean ✅
-isAdmin = 'false'; // Type 'string' is not assignable to type 'boolean' ❌
-isAdmin = false; // ✅
+- التحقق من تواجد TypeScript في النظام عن طريق كتابة الأمر التالي داخل الـ Terminal
+
+```
+tsc -v
 ```
 
-```ts
-// [index.ts] => example 4
-const car = {
-	model: 'Camry',
-	color: 'white',
-	year: 2022,
-};
-console.log(car.maxSpeed); // undefined ❌
-```
+والذي سيطبع لنا إصدار typescript في جهازنا مثل `Version 4.5.3`
+
+- فتح برنامج VSCode وإنشاء أول ملف TypeScript وتسميته `index.ts`
+- كتابة السطر البرمجي التالي في ملف `index.ts`
 
 ```ts
-// [index.ts] => example 5
-function getUsers(users) {
-	if (ysers.length > 0) {
-		console.log('Users count =', users.length);
-	} else {
-		console.log('There is no users!');
-	}
-}
-getUsers(['Ahmad', 'Ali', 'Alaa']); // ReferenceError: ysers is not defined ❌
+console.log('Welcome to TypeScript Course');
 ```
 
-كما تحتوي TypeScript على أنواع بيانات أخرى، سنتعرف عليها لاحقا في دروس قادمة بإذن الله، بالإضافة إلى أننا نستطيع تعريف أنواع بيانات أخرى بسيطة ومعقدة في TypeScript حسب احتياجنا لها، وسنتطرق بإذن الله تعالى لهذه المواضيع المتقدمة لاحقا.
+- تحويل الأكواد في ملف TypeScript إلى JavaScript (حيث ذكرنا سابقا أن المتصفحات لا تستطيع فهم TypeScript لذلك نقوم بتحويل أكواد TypeScript إلى JavaScript لتستطيع المتصفحات فهمها) وذلك عن طريق كتابة الأمر التالي بداخل الـ Terminal الخاص بـ VSCode
+
+```
+tsc index.ts
+```
+
+نلاحظ أنه قم تم توليد ملف جديد بنفس الاسم لكن بامتداد `js`
+الآن نستطيع القول بأن الـ compiler الخاص بـ TypeScript قد قام بتحويل الكود المكتوب في ملف TypeScript إلى كود بلغة JavaScript لتستطيع المتصفحات قراءته.
+
+- التعرف على الأمر التالي والذي يضع الـ compiler في وضع الـ watch mode وحرف `w` هو اختصار لـ `watch`
+
+```
+tsc index.ts -w
+```
+
+نستطيع كتابة الأمر السابق بداخل الـ Terminal الخاص بـ VSCode وذلك لجعل الـ compiler الخاص بـ TypeScript يشاهد جميع تغييراتنا أثناء عملنا لها وتحويلها مباشرة إلى كود JavaScript بمجرد حفظنا للملف أو الملفات ودون الحاجة إلى كتابة الأمر التالي في كل مرة نرغب فيها بتحويل الكود.
+
+```
+tsc filename.ts
+```
+
+## تطبيق عملي
+
+- قم بإنشاء مساحة عمل جديدة في VSCode
+- قم بإنشاء ملف `index.ts`
+- قم بكتابة رسالة ترحيبية بداخل الملف باستخدام `console.log`
+- قم بتحويل الكود المكتوب بلغة TypeScript في ملف `index.ts` إلى لغة JavaScript وذلك باستخدام الأمر التالي
+
+```
+tsc index.ts
+```
+
+- قم بطباعة مخرجات ملف index.js وذلك عن طريق كتابة الأمر التالي بداخل الـ terminal والذي يخبر node بأن تقوم بعمل compile لكود JavaScript الموجود بداخل ملف `index.js`
+
+```
+node index.js
+```
+
+- قم بوضع الـ compiler الخاص بـ TypeScript في وضع المراقبة watch mode وذلك بكتابة الأمر التالي
+
+```
+tsc index.ts -w
+```
+
+- قم بتعديل رسالة الترحيب في ملف `index.ts` وتعديلها لتقوم بطباعة اسمك الثلاثي.
+- لاحظ تغير الكود في ملف `index.js` بشكل آلي ودون الحاجة لكتابة الأمر `tsc` بداخل الـ Terminal للقيام بعملية التحويل.
+- قم بطباعة مخرجات ملف `index.js` الجديدة وذلك عن طريق كتابة الأمر التالي بداخل الـ terminal والذي يخبر node بأن تقوم بعمل compile لكود JavaScript الموجود بداخل ملف `index.js`
+
+```
+node index.js
+```
