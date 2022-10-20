@@ -13,3 +13,7 @@
 - [الدرس الأول](https://github.com/AymanAlshanqiti/typescript-course/tree/lesson-1)
 - [الدرس الثاني](https://github.com/AymanAlshanqiti/typescript-course/tree/lesson-2)
 - [الدرس الثالث](https://github.com/AymanAlshanqiti/typescript-course/tree/lesson-3)
+- [الدرس الرابع](https://github.com/AymanAlshanqiti/typescript-course/tree/lesson-4)
+- [الدرس الخامس](https://github.com/AymanAlshanqiti/typescript-course/tree/lesson-5)
+- [الدرس السادس](https://github.com/AymanAlshanqiti/typescript-course/tree/lesson-6)
+- [تمارين عملية](https://github.com/AymanAlshanqiti/typescript-course/blob/exercises/README.md)
