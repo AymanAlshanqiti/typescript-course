@@ -1,15 +1,7 @@
 # دورة أساسيات لغة TypeScript
 
-## تفاصيل الدورة
+## التمرين الأول
 
-ستتعلم في هذه الدورة أساسيات لغة TypeScript والتي ستكون أحد خطواتك الرئيسية لبناء مشاريع ويب عظيمة.
+نريد بناء نموذج لفاتورة عميل في أحد المتاجر الالكترونية، لنقوم بذلك نحتاج إلى مساعدتك، لذلك قم بإنشاء ملف بإمتداد `ts` وتعريف `7` متغيرات فيه وهي كالتالي `storyName`, `username`, `userEmail`, `itemName`, `itemQuantity`, `itemPrice` و `hasEmail` من أنواع البيانات التالية `string`, `number` و `boolean` ثم قم بتعيين قيم لها وطباعتها بالشكل التالي كما هو موضح في الصورة التالية
 
-## المتطلبات لبدء الدورة
-
-تتطلب الدورة معرفة بأساسيات لغة JavaScript والمتمثلة في التالي `Variables` و `Arrays` و `Objects` و `Functions` و `Conditions`.
-
-## فهرس الدورة
-
-- [الدرس الأول](https://github.com/AymanAlshanqiti/typescript-course/tree/lesson-1)
-- [الدرس الثاني](https://github.com/AymanAlshanqiti/typescript-course/tree/lesson-2)
-- [الدرس الثالث](https://github.com/AymanAlshanqiti/typescript-course/tree/lesson-3)
+![output](./images/01.png)
