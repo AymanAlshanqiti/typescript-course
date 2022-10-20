@@ -17,3 +17,53 @@
 الآن قم بتعريف `function` باسم `invoice` ومرر لها هذه الثلاث قيم `storeName`, `items` و `userInfo` لتقوم بدورها بطباعة فاتورة العميل كما هو ظاهر في الصورة التالية
 
 ![output](./images/02.png)
+
+## التمرين الثالث
+
+قم بتصحيح الكود التالي ليصبح أنظف وأكثر قابلية للقراءة
+
+```ts
+type UserInfoType = {
+	username: string;
+	age: number;
+};
+
+type ItemType = {
+	name: string;
+	price: number;
+};
+
+let userInfo: UserInfoType = {
+	username: 'ayman14',
+	age: 20,
+};
+
+let items: ItemType[] = [
+	{
+		name: 'iPhone 14',
+		price: 4000.23,
+	},
+	{
+		name: 'iPad',
+		price: 2999,
+	},
+	{
+		name: 'MacBook Pro',
+		price: 9999.99,
+	},
+];
+
+function invoice(
+	storeName: string,
+	userInfo: { username: string; age: number },
+	items: { name: string; price: number }[]
+) {
+	console.log(storeName);
+	console.table(userInfo);
+	console.table(items);
+}
+
+invoice('Dokkan Afkar', userInfo, items);
+```
+
+**ويكند سعيد**
