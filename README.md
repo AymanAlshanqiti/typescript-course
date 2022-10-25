@@ -125,3 +125,113 @@ store = {
 
 - في المثال السابق استخدم `type` حسب الحاجة وقم بإضافة نوع البيانات الراجعة بعد تنفيذ الـ `function`.
 - قم بتعريف `function signature` تستقبل `3 parameters` الأول والثاني يمثلان رقماً من نوع `number` والثالث يمثل اسم منفذ العملية من نوع `string` ويكون اختياري، ثم تقوم الـ `function` بإرجاع `object` يحتوي على `key` من نوع `number` يحمل نتيجة حاصل ضرب العددين و `key` يحمل اسم منفذ العملية في حال وجد أو `null` في حال عدم وجوده.
+
+## الحلول
+
+```ts
+const sum = (a: number, b: number): number => {
+	return a + b;
+};
+```
+
+```ts
+type UserType = {
+	fullName: string;
+	email: string;
+	uid: string | number;
+};
+
+const printUserCard = (user: UserType): void => {
+	console.log('\n##### User Card #####\n');
+	console.log('uid:', user.uid);
+	console.log('full name:', user.fullName);
+	console.log('email:', user.email);
+	console.log('\n####################\n');
+};
+```
+
+```ts
+const getUserInvoice = (
+	user: {
+		uid: string;
+		name: string;
+		address: string;
+	},
+	items: {
+		uid: string;
+		title: string;
+		price: number;
+		quantity: number;
+	}[],
+	store: {
+		uid: string;
+		name: string;
+		address: string;
+	}
+) => {
+	console.log('\n##### User Invoice #####');
+	console.log(`##### Welcome to ${store.name} #####\n`);
+
+	console.log('*** User Information ***');
+	console.log('user id:', user.uid);
+	console.log('username:', user.username);
+	console.log('has discount:', user.hassDiscount);
+
+	console.log('\n*** Items ***');
+	items.map(item => {
+		console.log('item', item.uid);
+		console.log('item title:', item.title);
+		console.log('item price:', item.price);
+		console.log('item quantity:', item.quantity);
+		console.log('total price:', item.quantity * item.price, '\n---');
+	});
+
+	console.log(
+		'*** store adress:',
+		store.address,
+		'||| store id:',
+		store.uid,
+		'***'
+	);
+	console.log('\n####################\n');
+};
+```
+
+```ts
+type UserType = {
+	uid: number;
+	username: string;
+	email: string;
+	hassDiscount: boolean;
+};
+
+type ItemType = {
+	uid: string;
+	title: string;
+	price: number;
+	quantity: number;
+};
+
+type StoreType = {
+	uid: string;
+	name: string;
+	address: string;
+};
+
+const getUserInvoice = (
+	user: UserType,
+	items: ItemType[],
+	store: StoreType
+): void => {
+	// code goes here ...
+};
+```
+
+```ts
+type MultiplyType = {
+	result: number;
+	username: string | null;
+};
+
+let multiply: (num1: number, num2: number, username?: string) => MultiplyType;
+```
