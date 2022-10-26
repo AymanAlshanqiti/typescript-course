@@ -149,3 +149,46 @@ console.log(ch);
 - قم بإنشاء `enum` يحتوي على نوع العميل `admin` او عميل عادي `normal`
 - قم بإنشاء `enum` يحتوي على مستوى تحدث العميل للغة الانجليزية بحيث يحتوي على 4 خيارات الاول لا يتحدث الانجليزية، الثاني متوسط والثالث محترف والرابع الانجليزية هي لغته الأم
 - قم بإنشاء `object` جديد يحتوي على بيانات العميل وقم بإضافة `keys` تحتوي على أنواع للـ `enums` التي قمنا بتعريفها
+
+## الحلول
+
+```ts
+// 1
+enum GenderEnum {
+	MALE = 'male',
+	FEMALE = 'female',
+}
+
+// type GenderType = "male" | "female"
+
+// 2
+enum CustomerRoleEnum {
+	ADMIN = 'ADMIN',
+	NORMAL = 'NORMAL',
+}
+
+// 3
+enum EnglishLevelEnum {
+	NO_ENGLISH = 'does not speek english',
+	INTERMEDIATE = 'INTERMEDIATE',
+	ADVANCE = 'ADVANCE',
+	NATIVE = 'NATIVE',
+}
+
+// 4
+type UserInfoType = {
+	firstName: string;
+	gender: GenderEnum;
+	role: CustomerRoleEnum;
+	englishLevel: EnglishLevelEnum;
+};
+
+let userInfo: UserInfoType = {
+	firstName: 'Ali',
+	gender: GenderEnum.MALE,
+	role: CustomerRoleEnum.NORMAL,
+	englishLevel: EnglishLevelEnum.NATIVE,
+};
+
+console.log(userInfo);
+```
